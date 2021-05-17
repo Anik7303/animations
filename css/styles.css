@@ -41,3 +41,29 @@ button,
     background-color: blueviolet;
     color: white;
 }
+
+#btn-two {
+    position: relative;
+}
+#btn-two::before,
+#btn-two::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: blueviolet;
+    transition-duration: 200ms;
+    transition-timing-function: ease-in-out;
+}
+#btn-two::before {
+    top: 0;
+    left: 0;
+}
+#btn-two::after {
+    bottom: 0;
+    right: 0;
+}
+#btn-two:hover::before,
+#btn-two:hover::after {
+    width: 100%;
+}
