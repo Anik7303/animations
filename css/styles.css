@@ -32,3 +32,12 @@ button,
     box-shadow: 0 5px 10px 5px rgba(138, 43, 226, 0.1);
     transition-duration: 200ms;
 }
+
+#btn-one {
+    border: 2px solid blueviolet;
+}
+
+#btn-one:hover {
+    background-color: blueviolet;
+    color: white;
+}
