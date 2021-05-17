@@ -67,3 +67,28 @@ button,
 #btn-two:hover::after {
     width: 100%;
 }
+
+#btn-three {
+    position: relative;
+    transition: all 200ms ease;
+}
+
+#btn-three::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: blueviolet;
+    transition: all 200ms ease;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+#btn-three:hover {
+    color: white;
+}
+
+#btn-three:hover::after {
+    height: 100%;
+}
