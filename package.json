@@ -1,0 +1,32 @@
+{
+    "name": "animations",
+    "version": "1.0.0",
+    "main": "index.js",
+    "repository": "git@github.com:Anik7303/animations.git",
+    "author": "Anik7303 <anik7303@gmail.com>",
+    "license": "MIT",
+    "scripts": {
+        "scss:watch": "node-sass scss/styles.scss css/main.css --watch",
+        "css:compile": "node-sass scss/styles.scss css/main.comp.css",
+        "css:prefix": "postcss css/main.comp.css --use autoprefixer --output css/main.prefix.css --verbose",
+        "css:compress": "node-sass css/main.prefix.css css/main.css --output-style compressed",
+        "css:build": "run-s css:compile css:prefix css:compress",
+        "serve": "live-server",
+        "dev": "run-p serve scss:watch"
+    },
+    "devDependencies": {
+        "autoprefixer": "^10.2.5",
+        "cssnano": "^5.0.3",
+        "live-server": "^1.2.1",
+        "node-sass": "^6.0.0",
+        "npm-run-all": "^4.1.5",
+        "postcss": "^8.2.15",
+        "postcss-cli": "^8.3.1",
+        "postcss-scss": "^3.0.5"
+    },
+    "browserslist": [
+        "> 0.02%",
+        "last 10 versions",
+        "not dead"
+    ]
+}

@@ -1,0 +1,172 @@
+button,
+.btn {
+    background: transparent;
+    box-shadow: 0 5px 10px 5px rgba(138, 43, 226, 0.1);
+    border: none;
+    color: $color-primary;
+    cursor: pointer;
+    font-size: 2rem;
+    margin: 2rem;
+    padding: 1.5rem 1rem;
+    position: relative;
+    text-transform: uppercase;
+    transition-duration: $transition-default;
+}
+
+%btn-two-common {
+    background-color: $color-primary;
+    content: '';
+    height: 2px;
+    position: absolute;
+    transition-duration: $transition-default;
+    transition-timing-function: ease-in-out;
+    width: 0;
+}
+
+%btn-four-common {
+    background-color: $color-primary;
+    content: '';
+    height: 0;
+    position: absolute;
+    transition: all $transition-default ease-in-out;
+    width: 0;
+    z-index: -1;
+}
+
+%btn-five-common {
+    background-color: $color-primary;
+    content: '';
+    height: 2px;
+    position: absolute;
+    transition: all $transition-default linear;
+    width: 0;
+}
+
+%btn-five-span-common {
+    height: 0;
+    width: 2px;
+}
+
+#btn {
+    &-one {
+        border: 2px solid $color-primary;
+
+        &:hover {
+            background-color: $color-primary;
+            color: $color-white;
+        }
+    }
+
+    &-two {
+        &::before {
+            @extend %btn-two-common;
+            left: 0;
+            top: 0;
+        }
+        &::after {
+            @extend %btn-two-common;
+            bottom: 0;
+            right: 0;
+        }
+
+        &:hover {
+            &::before,
+            &::after {
+                width: 100%;
+            }
+        }
+    }
+
+    &-three {
+        transition: all $transition-default ease-in-out;
+
+        &::after {
+            background-color: $color-primary;
+            bottom: 0;
+            content: '';
+            height: 0;
+            left: 0;
+            position: absolute;
+            transition: all $transition-default ease-in-out;
+            width: 100%;
+            z-index: -1;
+        }
+
+        &:hover {
+            color: $color-white;
+
+            &::after {
+                height: 100%;
+            }
+        }
+    }
+
+    &-four {
+        transition: all $transition-default ease-in-out;
+
+        &::before {
+            @extend %btn-four-common;
+            left: 0;
+            top: 0;
+        }
+
+        &::after {
+            @extend %btn-four-common;
+            bottom: 0;
+            right: 0;
+        }
+
+        &:hover {
+            color: $color-white;
+            &::before,
+            &::after {
+                height: 100%;
+                width: 100%;
+            }
+        }
+    }
+
+    &-five {
+        &::before {
+            @extend %btn-five-common;
+            left: 0;
+            top: 0;
+        }
+
+        &::after {
+            @extend %btn-five-common;
+            bottom: 0;
+            right: 0;
+        }
+
+        & > span {
+            &::before {
+                @extend %btn-five-common;
+                @extend %btn-five-span-common;
+                bottom: 0;
+                left: 0;
+            }
+
+            &::after {
+                @extend %btn-five-common;
+                @extend %btn-five-span-common;
+                right: 0;
+                top: 0;
+            }
+        }
+
+        &:hover {
+            &::before,
+            &::after {
+                width: 100%;
+            }
+
+            & > span {
+                &::before,
+                &::after {
+                    height: 100%;
+                }
+            }
+        }
+    }
+}
