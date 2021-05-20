@@ -30,6 +30,7 @@ button,
   cursor: pointer;
   font-size: 2rem;
   margin: 2rem;
+  min-width: 15rem;
   padding: 1.5rem 1rem;
   position: relative;
   text-transform: uppercase;
@@ -40,8 +41,7 @@ button,
   content: '';
   height: 2px;
   position: absolute;
-  transition-duration: 200ms;
-  transition-timing-function: ease-in-out;
+  transition: all 200ms ease-in-out;
   width: 0; }
 
 #btn-four::before, #btn-four::after {
@@ -64,6 +64,16 @@ button,
 #btn-five > span::before, #btn-five > span::after {
   height: 0;
   width: 2px; }
+
+#btn-seven::before, #btn-seven::after {
+  border-color: transparent;
+  border-style: solid;
+  border-width: 0;
+  content: '';
+  height: 0;
+  position: absolute;
+  transition: all 200ms ease-in-out;
+  width: 0; }
 
 #btn-one {
   border: 2px solid blueviolet; }
@@ -149,4 +159,43 @@ button,
 #btn-six:hover {
   color: #e5e5e5; }
   #btn-six:hover::before {
+    width: 100%; }
+
+#btn-seven {
+  border: 2px solid blueviolet; }
+  #btn-seven::before {
+    top: 0;
+    right: 0; }
+  #btn-seven::after {
+    bottom: 0;
+    right: 0; }
+  #btn-seven:hover {
+    padding-right: 3rem; }
+    #btn-seven:hover::before {
+      border-right-width: 3rem;
+      border-bottom-width: 3rem;
+      border-right-color: blueviolet; }
+    #btn-seven:hover::after {
+      border-bottom-width: 3rem;
+      border-left-width: 3rem;
+      border-bottom-color: blueviolet; }
+
+#btn-eight::after {
+  background-color: blueviolet;
+  border-radius: 5rem;
+  content: '';
+  height: 0;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 400ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  width: 0;
+  z-index: -1; }
+
+#btn-eight:hover {
+  color: #e5e5e5; }
+  #btn-eight:hover::after {
+    border-radius: 0;
+    height: 100%;
     width: 100%; }

@@ -19,8 +19,7 @@ button,
     content: '';
     height: 2px;
     position: absolute;
-    transition-duration: $transition-default;
-    transition-timing-function: ease-in-out;
+    transition: all $transition-default ease-in-out;
     width: 0;
 }
 
