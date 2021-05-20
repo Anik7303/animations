@@ -169,4 +169,26 @@ button,
             }
         }
     }
+
+    &-six {
+        &::before {
+            background-color: $color-primary;
+            content: '';
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            transition: all $transition-default ease-in-out;
+            width: 2px;
+            z-index: -1;
+        }
+
+        &:hover {
+            color: $color-white;
+
+            &::before {
+                width: 100%;
+            }
+        }
+    }
 }
